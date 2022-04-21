@@ -4,16 +4,17 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
+        length=len(nums)
         #iterate by two or 3
-        k%=len(nums)
+        k%=length
         x=0
-        counter=len(nums)-1
+        counter=length-1
         nextNum=k
         #need to check if we touch same element again
         temp=nums[nextNum]
         nums[nextNum]=nums[0]
         nextNum+=k
-        nextNum%=len(nums)
+        nextNum%=length
 
         while(counter):
             #need var to keep loc
@@ -25,14 +26,14 @@ class Solution:
                 counter-=1
                 temp=temp2
                 nextNum+=k
-                nextNum%=len(nums)
+                nextNum%=length
             else:
                 x+=1
                 
-                temp2=nums[(nextNum+1)%len(nums)]
+                temp2=nums[(nextNum+1)%length]
                 nums[nextNum]=temp
                 counter-=1
                 temp=temp2
                 nextNum+=1 +k
-                nextNum%=len(nums)
+                nextNum%=length
         
