@@ -1,14 +1,8 @@
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-     #sorting is nlogn
-    #can do linear time but need a hash to store
-    
-        diction={}
+        unique_ele = set()
         for num in nums:
-            if diction.get(num)==None:
-                diction.update({num: True})
-            else:
+            if num in unique_ele:
                 return True
+            unique_ele.add(num)
         return False
-    
-            
