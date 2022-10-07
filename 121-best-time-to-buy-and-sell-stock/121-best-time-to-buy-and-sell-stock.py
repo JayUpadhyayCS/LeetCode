@@ -1,14 +1,17 @@
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         mini= float('inf')
-        maxi=0
-        answer=0
+        
+        previ=0
+        profit=0
         for x in prices:
-            if x<mini:
+            if float('inf')==mini:
                 mini=x
-            elif x-mini>maxi:
-                maxi=x-mini
-        return maxi
+            elif(x-mini>profit):
+                profit=x-mini
+            if(x<mini):
+                mini=x
+        return profit
      #Have a max that changes
     # Compute max profit
     
